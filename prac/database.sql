@@ -39,7 +39,4 @@ INSERT INTO employees (last_name, first_name, middle_name, position, salary, dep
 ('Petrova', 'Maria', 'Sergeevna', 'HR Director', 150000, 2, '2021-02-10', 'petrova@company.ru', '+7(916)123-4502', '1982-08-20'),
 ('Sidorov', 'Alexey', 'Petrovich', 'Sales Manager', 140000, 3, '2021-03-20', 'sidorov@company.ru', '+7(916)123-4503', '1988-03-15');
 
-CREATE USER  'hr_user'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';		
-GRANT ALL PRIVILEGES ON hr_db.* TO 'hr_user'@'localhost';	
-FLUSH PRIVILEGES;
 
