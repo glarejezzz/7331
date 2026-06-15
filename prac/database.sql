@@ -2,7 +2,6 @@
  CREATE DATABASE hr_db;
 USE hr_db;
 
--- 2. Создаем таблицы (если еще не созданы)
 CREATE TABLE departments (
     department_id INT AUTO_INCREMENT PRIMARY KEY,
     department_code VARCHAR(10) NOT NULL UNIQUE,
@@ -30,7 +29,6 @@ CREATE TABLE employees (
 
 
 
--- 4. Вставляем данные
 INSERT INTO departments (department_code, department_name, manager_name, phone, location, budget) VALUES 
 ('IT-01', 'IT', 'Tehnikov Anton Pavlovich', '+7(495)123-4501', '5th floor', 15000000.00),
 ('HR-02', 'HR', 'Kadrova Elena Vladimirovna', '+7(495)123-4502', '3rd floor', 8000000.00),
@@ -41,11 +39,7 @@ INSERT INTO employees (last_name, first_name, middle_name, position, salary, dep
 ('Petrova', 'Maria', 'Sergeevna', 'HR Director', 150000, 2, '2021-02-10', 'petrova@company.ru', '+7(916)123-4502', '1982-08-20'),
 ('Sidorov', 'Alexey', 'Petrovich', 'Sales Manager', 140000, 3, '2021-03-20', 'sidorov@company.ru', '+7(916)123-4503', '1988-03-15');
 
--- 5. Создаем пользователя для подключения из программы
 CREATE USER  'hr_user'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';		
 GRANT ALL PRIVILEGES ON hr_db.* TO 'hr_user'@'localhost';	
-FLUSH PRIVILEGES;
-
-ALTER USER 'hr_user'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
 FLUSH PRIVILEGES;
 
